@@ -32,7 +32,7 @@ class BookController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
         ]);
-        $book = book::create($validated);
+        $book = Book::create($validated);
         
         return response()->json($book,201);
     }
@@ -42,7 +42,13 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $book = Book::find($id);
+        
+        if(!$book){
+            return response()->json(['message'=> 'book dont exists'],404);
+        }
+
+        return response()->json($book,200);
     }
 
     /**

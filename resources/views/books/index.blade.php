@@ -4,7 +4,7 @@
     <title>CRUD Laravel</title>
 </head>
 <body>
-    <h1>Lista de Itens</h1>
+    <h1>Lista de Livros</h1>
     <a href="{{ route('items.create') }}">Adicionar Item</a>
     <table>
         <thead>
